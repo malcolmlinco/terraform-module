@@ -22,7 +22,7 @@ resource "aws_instance" "My-first-ec2" {
   region        = var.region
 
   tags = {
-    Name = "${var.instance_name}-${count.index}"
+    Name = "${var.instance_name}"
   }
 
 }
