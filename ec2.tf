@@ -27,7 +27,7 @@ resource "aws_instance" "My-first-ec2" {
 
 }
 
-able "ami-id" {
+variable "ami-id" {
   type        = string
   default     = "ami-0854d4f8e4bd6b834"
   description = "Defines ami id to launch the instance"
