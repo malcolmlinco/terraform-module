@@ -21,3 +21,9 @@ variable "instance_cnt" {
   default     = 1
   description = "Defines number of instances to launch"
 }
+
+variable "instance_name" {
+  type = string
+  default "ec2 instance from github"
+  description = "default name for ec2 instance"
+}
