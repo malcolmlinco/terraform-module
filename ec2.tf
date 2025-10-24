@@ -18,7 +18,7 @@ provider "aws" {
 
 resource "aws_instance" "My-first-ec2" {
   ami           = var.ami-id
-  instance_type = "t2.micro"
+  instance_type = "t3.micro"
   region        = var.region
 
   tags = {
