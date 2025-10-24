@@ -24,6 +24,6 @@ variable "instance_cnt" {
 
 variable "instance_name" {
   type = string
-  default "ec2 instance from github"
+  default = "ec2 instance from github"
   description = "default name for ec2 instance"
 }
