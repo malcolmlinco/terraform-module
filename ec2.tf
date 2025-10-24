@@ -26,21 +26,3 @@ resource "aws_instance" "My-first-ec2" {
   }
 
 }
-
-variable "ami-id" {
-  type        = string
-  default     = "ami-0854d4f8e4bd6b834"
-  description = "Defines ami id to launch the instance"
-}
-
-variable "region" {
-  type        = string
-  default     = "eu-north-1"
-  description = "Defines region to launch the instance"
-}
-
-variable "instance_name" {
-  type        = string
-  default     = "ec2-instance"
-  description = "Base name for EC2 instances"
-}
