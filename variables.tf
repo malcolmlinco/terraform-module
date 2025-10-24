@@ -5,7 +5,7 @@ variable "ami-id" {
 }
 
 variable "instance-type" {
-  type = map(string)
+  type = string
   default = "t3.micro"
   description = "Defines instance type to launch the instance"
 }
