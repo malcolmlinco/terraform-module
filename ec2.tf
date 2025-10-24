@@ -16,32 +16,8 @@ provider "aws" {
 
 }
 
-data "aws_ami" "amazonami" {
-  most_recent = true
-  owners      = ["amazon"]
-
-  filter {
-    name   = "name"
-    values = ["amzn2-ami-hvm-*-x86_64-gp2"]
-  }
-
-  filter {
-    name   = "virtualization-type"
-    values = ["hvm"]
-  }
-  filter {
-    name   = "architecture"
-    values = ["x86_64"]
-  }
-
-
-}
-
-
-
 resource "aws_instance" "My-first-ec2" {
-  count         = var.instance_cnt
-  ami           = data.aws_ami.amazonami.id
+  ami           = var.ami-id
   instance_type = "t2.micro"
   region        = var.region
 
@@ -49,4 +25,22 @@ resource "aws_instance" "My-first-ec2" {
     Name = "${var.instance_name}-${count.index}"
   }
 
+}
+
+able "ami-id" {
+  type        = string
+  default     = "ami-0854d4f8e4bd6b834"
+  description = "Defines ami id to launch the instance"
+}
+
+variable "region" {
+  type        = string
+  default     = "eu-north-1"
+  description = "Defines region to launch the instance"
+}
+
+variable "instance_name" {
+  type        = string
+  default     = "ec2-instance"
+  description = "Base name for EC2 instances"
 }
